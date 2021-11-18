@@ -55,7 +55,7 @@
           <Chart type="bar" :data="BarData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
         </ScrollPanel>
         <Sidebar v-model:visible="visibleFull" position="full">
-          <div class="p-d-flex" >
+          <div class="p-d-flex" id="charts" >
             <Chart type="bar" :data="basicData" id="chart" :options="options" :width="375" :height="250" class="p-d-flex"/>
             <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
             <Chart type="line" :data="LineData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
@@ -64,7 +64,7 @@
               <Button label ="Test1" v-bind:badge="RSEdata1" icon="pi pi-percentage" id="RseBtn" class="p-d-block"></Button>
             </div>
           </div>
-          <div class="p-d-flex">
+          <div class="p-d-flex" id="charts">
             <Chart type="polarArea" :data="PolarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
             <Chart type="radar" :data="RadarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
             <Chart type="bar" :data="BarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
