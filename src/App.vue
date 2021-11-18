@@ -55,16 +55,16 @@
           <Chart type="bar" :data="BarData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
         </ScrollPanel>
         <Sidebar v-model:visible="visibleFull" position="full">
-          <div class="p-d-flex" id="charts" >
+          <div class="p-d-flex" v-if="SideBarHidden" id="charts" >
             <Chart type="bar" :data="basicData" id="chart" :options="options" :width="375" :height="250" class="p-d-flex"/>
             <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
             <Chart type="line" :data="LineData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
             <div class="p-d-block">
-              <Button label ="TestAnotherSet" v-bind:badge="RSEdata" icon="pi pi-chart-bar" id="RseBtn" class="p-d-block" @click="changeInterface"></Button>
+              <Button label ="TestAnotherSet" v-bind:badge="RSEdata" icon="pi pi-chart-bar" id="RseBtn" class="p-d-block" @click="changeInterfaceSidebar"></Button>
               <Button label ="Test1" v-bind:badge="RSEdata1" icon="pi pi-percentage" id="RseBtn" class="p-d-block"></Button>
             </div>
           </div>
-          <div class="p-d-flex" id="charts">
+          <div class="p-d-flex" v-if="SideBarHidden" id="charts">
             <Chart type="polarArea" :data="PolarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
             <Chart type="radar" :data="RadarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
             <Chart type="bar" :data="BarData" id="chart" :width="375" :height="250" :options="options" class="p-d-inline"/>
@@ -72,6 +72,9 @@
               <Button label ="Test2" v-bind:badge="RSEdata2" icon="pi pi-key" id="RseBtn" class="p-d-block" ></Button>
               <Button label ="TestingDataFromMagisoft" v-bind:badge="RSEdata3" icon="pi pi-heart" id="RseBtn" class="p-d-block" @click="addData"></Button>
             </div>
+          </div>
+          <div v-if="!SideBarHidden">
+              <Button label ="TestAnotherSet" v-bind:badge="RSEdata" icon="pi pi-chart-bar" id="RseBtn" class="p-d-block" @click="changeInterfaceBackSidebar"></Button>
           </div>
         </Sidebar>
         <Button icon="pi pi-plus" @click="visibleFull = true"  class="p-d-block"/>
@@ -150,6 +153,7 @@ export default {
     return{
       visibleFull: false,
       value:0,
+      SideBarHidden: true,
       valueR:50,
       selectedCity: null,
 		  cities: [
@@ -303,6 +307,14 @@ export default {
     },
     changeInterfaceBack(){
       this.hidden = true;
+      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
+    },
+    changeInterfaceSidebar(){
+      this.SideBarHidden = false;
+      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
+    },
+    changeInterfaceBackSidebar(){
+      this.SideBarHidden = true;
       this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
     }
   },
