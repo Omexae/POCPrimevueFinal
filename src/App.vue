@@ -80,64 +80,64 @@
         <Button icon="pi pi-plus" @click="visibleFull = true"  class="p-d-block"/>
       </div>
     </TabPanel>
-        <TabPanel header="KPI2">
+    <TabPanel header="KPI2">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI3">
+    <TabPanel header="KPI3">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI4">
+    <TabPanel header="KPI4">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI5">
+    <TabPanel header="KPI5">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI6">
+    <TabPanel header="KPI6">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI7">
+    <TabPanel header="KPI7">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI8">
+    <TabPanel header="KPI8">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI9">
+    <TabPanel header="KPI9">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI10">
+    <TabPanel header="KPI10">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI11">
+    <TabPanel header="KPI11">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI12">
+    <TabPanel header="KPI12">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI13">
+    <TabPanel header="KPI13">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI14">
+    <TabPanel header="KPI14">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI15">
+    <TabPanel header="KPI15">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI16">
+    <TabPanel header="KPI16">
       Another tab that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI17">
+    <TabPanel header="KPI17">
       Another tab that can be filled with graphs
     </TabPanel>
     <TabPanel header="KPI18">
       Another header that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI19">
+    <TabPanel header="KPI19">
       Another header that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI20">
+    <TabPanel header="KPI20">
       Another header that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI21">
+    <TabPanel header="KPI21">
       Another header that can be filled with graphs
     </TabPanel>
   </TabView>
