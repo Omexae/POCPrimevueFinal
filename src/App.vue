@@ -137,7 +137,7 @@
         <TabPanel header="KPI20">
       Another header that can be filled with graphs
     </TabPanel>
-        <TabPanel header="KPI121">
+        <TabPanel header="KPI21">
       Another header that can be filled with graphs
     </TabPanel>
   </TabView>
