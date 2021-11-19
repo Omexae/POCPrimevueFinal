@@ -46,13 +46,13 @@
     </TabPanel>
       <TabPanel header="Affichage de côté">
       <div class="p-d-block">
-        <ScrollPanel style="width: 27%; height: 600px" class="custom">
-          <Chart type="bar" :data="basicData" id="chart" :options="options" :width="375" :height="250" @click="addData" class="p-d-flex"/>
-          <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="line" :data="LineData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="polarArea" :data="PolarData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="radar" :data="RadarData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="bar" :data="BarData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
+        <ScrollPanel style="width: 20%; height: 600px" class="custom">
+          <Chart type="bar" :data="basicData" id="chart" :options="options" :width="280" :height="250" @click="addData" class="p-d-flex"/>
+          <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="line" :data="LineData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="polarArea" :data="PolarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="radar" :data="RadarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="bar" :data="BarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
         </ScrollPanel>
         <Sidebar v-model:visible="visibleFull" position="full">
           <div class="p-d-flex" v-if="SideBarHidden" id="charts" >
@@ -299,7 +299,7 @@ export default {
           {
             label:'Premier dataset',
             backgroundColor: 'purple',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: [65, 59, 80, 81, 56, 55, 150],
           },
         ],
       };
