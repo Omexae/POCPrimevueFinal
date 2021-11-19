@@ -129,16 +129,16 @@
       Another tab that can be filled with graphs
     </TabPanel>
     <TabPanel header="KPI18">
-      Another header that can be filled with graphs
+      Another tab that can be filled with graphs
     </TabPanel>
     <TabPanel header="KPI19">
-      Another header that can be filled with graphs
+      Another tab that can be filled with graphs
     </TabPanel>
     <TabPanel header="KPI20">
-      Another header that can be filled with graphs
+      Another tab that can be filled with graphs
     </TabPanel>
     <TabPanel header="KPI21">
-      Another header that can be filled with graphs
+      Another tab that can be filled with graphs
     </TabPanel>
   </TabView>
   
