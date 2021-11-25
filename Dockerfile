@@ -12,5 +12,6 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 RUN npm install
 RUN npm install -g @vue/cli
+RUN npm i --save-dev vue-loader-v16
 # start app
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "serve","--","--port","5000"]

@@ -15,5 +15,10 @@ npm run serve
 npm run build
 ```
 
+### Run in powershell for create a container
+```
+docker run -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 5000:5000 pocprimevue
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
