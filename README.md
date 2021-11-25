@@ -17,6 +17,7 @@ npm run build
 
 ### Run in powershell for create a container
 ```
+docker build -t pocprimevue .
 docker run -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 5000:5000 pocprimevue
 ```
 
