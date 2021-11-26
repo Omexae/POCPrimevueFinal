@@ -12,7 +12,7 @@
         <div class="p-d-flex" >
           <Chart type="bar" :data="basicData" id="chart" :options="options" :width="375" :height="250" class="p-d-flex"/>
           <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="line" :data="LineData" id="chart" :width="375" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="line" :data="LineData" id="chart" :options="options" :width="375" :height="250" class="p-d-flex"/>
           <div class="p-d-block">
             <Button label ="TestAnotherSet" v-bind:badge="RSEdata" icon="pi pi-chart-bar" id="RseBtn" class="p-d-block" @click="changeInterface"></Button>
             <Button label ="Test1" v-bind:badge="RSEdata1" icon="pi pi-percentage" id="RseBtn" class="p-d-block"></Button>
