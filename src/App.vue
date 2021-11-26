@@ -45,14 +45,14 @@
       <SelectButton v-model="selectedCity" :options="cities" optionLabel="code" />
     </TabPanel>
       <TabPanel header="Affichage de côté">
-      <div class="p-d-block">
-        <ScrollPanel style="width: 20%; height: 800px" class="custom">
-          <Chart type="bar" :data="basicData" id="chart" :options="options" :width="280" :height="250" @click="addData" class="p-d-flex"/>
-          <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="line" :data="LineData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="polarArea" :data="PolarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="radar" :data="RadarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
-          <Chart type="bar" :data="BarData" id="chart" :width="280" :height="250" :options="options" class="p-d-flex"/>
+      <div class="p-d-block" :style="{ backgroundImage: `url(${backgimg})`}" style="width: 79%; height: 650px">
+        <ScrollPanel style="width: 15%; height: 700px; paddingTop: 60px; paddingBottom: 150px" class="custom">
+          <Chart type="bar" :data="basicData" id="chart" :options="options" :width="140" :height="250" @click="addData" class="p-d-flex"/>
+          <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="line" :data="LineData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="polarArea" :data="PolarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="radar" :data="RadarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
+          <Chart type="bar" :data="BarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
         </ScrollPanel>
         <Sidebar v-model:visible="visibleFull" position="full">
           <div class="p-d-flex" v-if="SideBarHidden" id="charts" >
@@ -147,10 +147,12 @@
 <script>
 
 import { ref } from 'vue'
+import backgimg from './assets/magisoft_rognee.png'
 
 export default {
   data(){
     return{
+      backgimg,
       visibleFull: false,
       value:0,
       SideBarHidden: true,
