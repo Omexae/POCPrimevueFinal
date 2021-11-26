@@ -53,6 +53,7 @@
           <Chart type="polarArea" :data="PolarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
           <Chart type="radar" :data="RadarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
           <Chart type="bar" :data="BarData" id="chart" :width="140" :height="250" :options="options" class="p-d-flex"/>
+          <Button icon="pi pi-plus" @click="visibleFull = true"  class="p-d-block"/>
         </ScrollPanel>
         <Sidebar v-model:visible="visibleFull" position="full">
           <div class="p-d-flex" v-if="SideBarHidden" id="charts" >
@@ -77,7 +78,6 @@
               <Button label ="TestAnotherSet" v-bind:badge="RSEdata" icon="pi pi-chart-bar" id="RseBtn" class="p-d-block" @click="changeInterfaceBackSidebar"></Button>
           </div>
         </Sidebar>
-        <Button icon="pi pi-plus" @click="visibleFull = true"  class="p-d-block"/>
       </div>
     </TabPanel>
     <TabPanel header="KPI2">
