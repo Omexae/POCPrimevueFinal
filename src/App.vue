@@ -258,7 +258,7 @@ export default {
                     backgroundColor: ["#42A5F5","#66BB6A","#FFA726","#26C6DA","#7E57C2"],
                     label: 'My dataset'
                 }],
-                labels: ["Red","Green","Yellow","Grey","Blue"]
+                labels: ["Blue","Green","Yellow","Cyan","Purple"]
             },
             RadarData: {
                 labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
