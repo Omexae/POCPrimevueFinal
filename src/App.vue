@@ -332,7 +332,7 @@ export default {
             data: this.TestData,
           },
           {
-            label:'Premier dataset',
+            label:'Deuxième dataset',
             backgroundColor: 'purple',
             data: [65, 59, 80, 81, 56, 55, 150],
           },
