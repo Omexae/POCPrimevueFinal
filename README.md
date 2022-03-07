@@ -20,6 +20,10 @@ npm run build
 docker build -t pocprimevue .
 docker run -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 5000:5000 pocprimevue
 ```
+#### Run the build for the customer
+```
+Just run the .bat file called "test.bat"
+```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
