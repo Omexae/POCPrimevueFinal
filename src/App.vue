@@ -168,7 +168,12 @@ export default {
           },
         ],
       };
-      CefSharp.PostMessage("Bar chart changed")
+                  try{
+                CefSharp.PostMessage("Bar chart changed");
+            }
+            catch{
+              console.log("Won't bring up any message if you are not in Magisoft")
+            }
     },
     changeInterfaceBack(){
       this.hidden = true;
@@ -183,7 +188,13 @@ export default {
       this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
     },
     tryMagisoft(){
-      CefSharp.PostMessage(this.msg.toString());
+                  try{
+                CefSharp.PostMessage(this.msg.toString());
+            }
+            catch{
+              console.log("Won't bring up any message if you are not in Magisoft")
+            }
+      
     },
     tryMagisoftWhile(){
       this.i=0;
@@ -197,7 +208,6 @@ export default {
       /*fetch("data.json")
         .then(response => response.json())
         .then(data => (this.JsonData = data));*/
-      console.log(this.JsonData);
       this.chartData = {
                         labels: ['A','B','C'],
                 datasets: [
@@ -208,7 +218,13 @@ export default {
                     }
                 ],
             };
-            CefSharp.PostMessage("Circle chart changed");
+            try{
+                CefSharp.PostMessage("Circle chart changed");
+            }
+            catch{
+              console.log("Won't bring up any message if you are not in Magisoft")
+            }
+
       }
   },
 }

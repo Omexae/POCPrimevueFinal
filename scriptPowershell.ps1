@@ -1,0 +1,1 @@
+cd C:\Users\ara\Desktop\pocprimevueFinal; npm install; serve -s dist
