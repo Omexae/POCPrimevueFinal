@@ -141,7 +141,6 @@ export default {
         maintainAspectRatio : true,
         autoPadding : false,
       }
-      
     }
   },
   methods:{
