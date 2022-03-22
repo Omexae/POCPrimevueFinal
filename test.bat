@@ -1,1 +1,1 @@
-powershell.exe -File C:\users\ara\Desktop\pocprimevueFinal\scriptPowershell.ps1
+powershell.exe -File scriptPowershell.ps1
