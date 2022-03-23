@@ -4,7 +4,7 @@
           <Chart type="bar" :data="basicData" id="chart" :options="options" @click="addData"/>
           <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :options="options" />
           <Chart type="line" :data="LineData" id="chart" :options="options" />
-          <Chart type="polarArea" :data="PolarData" id="chart" :options="options" />
+          <Chart type="polarArea" :data="PolarData" id="chart" :options="options" />   
           <Chart type="radar" :data="RadarData" id="chart" :options="options" />
           <Chart type="bar" :data="BarData" id="chart" :options="options" />
           <Button icon="pi pi-minus" @click="tryMagisoft"  />
@@ -16,18 +16,18 @@
 <script>
 
 import { ref } from 'vue'
-import DataJson from "./data.json";
-import testdataJson from "./testdata.json"
-import testdataMGJson from "./testdataMG.json"
+import DataJson from "./data.json";             //
+import testdataJson from "./testdata.json"      // Lignes permettant d'importer les données venant de fichier JSON
+import testdataMGJson from "./testdataMG.json"  // 
 
 
 export default {
   data(){
     return{
       msg: "5448",
-      TestDataMG: testdataMGJson,
-      TestData: testdataJson,
-      JsonData : DataJson,
+      TestDataMG: testdataMGJson, //
+      TestData: testdataJson,     // Créér des variables JavaScript qui contiennent les données importées est nécéssaire
+      JsonData : DataJson,        // pour pouvoir les exploiter ensuite
       basicData: {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
@@ -176,7 +176,8 @@ export default {
     getJsonData(){
       /*Création d'un nouveau graphe en utilisant des données venant d'un fichier JSON
       Se déclenche lorsqu'on clique sur le bouton "replay" tout en bas de la page
-      Vient modifier le deuxième graphe du site*/
+      Vient modifier le deuxième graphe du site, mais ne change rien en réalité car les données JSON sont les mêmes que celles déja utilisées
+      La fonction ne sert que de modèle*/
       this.chartData = {
         labels: ['A','B','C'],
         datasets: [
