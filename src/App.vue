@@ -25,17 +25,9 @@ export default {
   data(){
     return{
       msg: "5448",
-      value:0,
-      valueR:50,
-      JData : [150,200,300],
       TestDataMG: testdataMGJson,
-      i:0,
-      primeChart: ref(),
-      hidden: true,
       TestData: testdataJson,
-      data1: 65,
       JsonData : DataJson,
-      dataCollection: null,
       basicData: {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
@@ -61,7 +53,7 @@ export default {
                     }
                 ]
             },
-            LineData: {
+      LineData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                     {
@@ -80,7 +72,7 @@ export default {
                     }
                 ]
             },
-            PolarData: {
+      PolarData: {
                 datasets: [{
                     data: [11,16,7,3,14],
                     backgroundColor: ["#42A5F5","#66BB6A","#FFA726","#26C6DA","#7E57C2"],
@@ -88,7 +80,7 @@ export default {
                 }],
                 labels: ["Blue","Green","Yellow","Cyan","Purple"]
             },
-            RadarData: {
+      RadarData: {
                 labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
                 datasets: [
                     {
@@ -100,7 +92,8 @@ export default {
                         pointHoverBackgroundColor: '#fff',
                         pointHoverBorderColor: 'rgba(179,181,198,1)',
                         data: [65, 59, 90, 81, 56, 55, 40]
-                    },{
+                    },
+                    {
                         label: 'My Second dataset',
                         backgroundColor: 'rgba(255,99,132,0.2)',
                         borderColor: 'rgba(255,99,132,1)',
@@ -112,7 +105,7 @@ export default {
                     }
                 ]
             },
-            BarData: {
+      BarData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
                     type: 'line',
@@ -144,14 +137,9 @@ export default {
     }
   },
   methods:{
-    greet(){
-      this.$toast.add({severity :'info', summary:'Hello', detail: this.text, life: 3000});
-    },
-    changeInterface(){
-      this.hidden = false;
-      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
-    },
     addData(){
+      /*Permet de créer un nouveau graphe à la place du premier graphe du site en utlisant des données venant des fichiers JSON
+      Se déclenche lorsqu'on clique sur le premier graphe*/
       this.basicData = {
         labels:['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
         datasets:[
@@ -167,64 +155,45 @@ export default {
           },
         ],
       };
-                  try{
-                CefSharp.PostMessage("Bar chart changed");
-            }
-            catch{
-              console.log("Won't bring up any message if you are not in Magisoft")
-            }
-    },
-    changeInterfaceBack(){
-      this.hidden = true;
-      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
-    },
-    changeInterfaceSidebar(){
-      this.SideBarHidden = false;
-      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
-    },
-    changeInterfaceBackSidebar(){
-      this.SideBarHidden = true;
-      this.$toast.add({severity :'info', summary:'On click', detail: 'Interface changed', life: 3000});
+      try{
+        CefSharp.PostMessage("Bar chart changed");
+      }
+      catch{
+        console.log("Won't bring up any message if you are not in Magisoft")
+      }
     },
     tryMagisoft(){
-                  try{
-                CefSharp.PostMessage(this.msg.toString());
-            }
-            catch{
-              console.log("Won't bring up any message if you are not in Magisoft")
-            }
+      /*Permet d'envoyer un message vers Magisoft
+      Il y un bug logiciel : ne peux envoyer que le premier caractère du message*/
+      try{
+        CefSharp.PostMessage(this.msg.toString());
+          }
+      catch{
+        console.log("Won't bring up any message if you are not in Magisoft")
+          }
       
     },
-    tryMagisoftWhile(){
-      this.i=0;
-      while(this.i < this.msg.length){
-        CefSharp.PostMessage(this.msg.charAt(this.i));
-        //console.info(this.msg.charAt(this.i))
-        this.i++;
-      }
-    },
     getJsonData(){
-      /*fetch("data.json")
-        .then(response => response.json())
-        .then(data => (this.JsonData = data));*/
+      /*Création d'un nouveau graphe en utilisant des données venant d'un fichier JSON
+      Se déclenche lorsqu'on clique sur le bouton "replay" tout en bas de la page
+      Vient modifier le deuxième graphe du site*/
       this.chartData = {
-                        labels: ['A','B','C'],
-                datasets: [
-                    {
-                        data: this.JsonData, 
-                        backgroundColor: ["#42A5F5","#66BB6A","#FFA726"],
-                        hoverBackgroundColor: ["#64B5F6","#81C784","#FFB74D"]
-                    }
-                ],
-            };
-            try{
-                CefSharp.PostMessage("Circle chart changed");
-            }
-            catch{
-              console.log("Won't bring up any message if you are not in Magisoft")
-            }
-
+        labels: ['A','B','C'],
+        datasets: [
+          {
+            data: this.JsonData, 
+            backgroundColor: ["#42A5F5","#66BB6A","#FFA726"],
+            hoverBackgroundColor: ["#64B5F6","#81C784","#FFB74D"]
+          }
+        ],
+      };
+      try{
+        CefSharp.PostMessage("Circle chart changed");
       }
+      catch{
+      console.log("Won't bring up any message if you are not in Magisoft")
+      }
+   }
   },
 }
 </script>
