@@ -15,7 +15,6 @@
 
 <script>
 
-import { ref } from 'vue'
 import DataJson from "./data.json";             //
 import testdataJson from "./testdata.json"      // Lignes permettant d'importer les données venant de fichier JSON
 import testdataMGJson from "./testdataMG.json"  // 
@@ -207,9 +206,6 @@ export default {
   color: #000000;
   background-color:whitesmoke ;
   text-align: center;
-/*Ligne de test qui permet de vérifier si la sidebar se scale avec la taille de l'app ou la taille de l'écran
-  Résultat : elle se scale sur la taille de l'écran
-  width:25%;*/
 }
 #btn{
   text-align: center;
