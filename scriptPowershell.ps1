@@ -1,1 +1,1 @@
-npm install; npm run build; serve -s dist
+npm install; npm run build; npm install -g serve; serve -s dist
