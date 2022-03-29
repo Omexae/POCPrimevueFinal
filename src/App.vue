@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 import DataJson from "./data.json";             //
 import testdataJson from "./testdata.json"      // Lignes permettant d'importer les données venant de fichier JSON
 import testdataMGJson from "./testdataMG.json"  // 

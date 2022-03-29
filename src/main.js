@@ -4,19 +4,6 @@ import App from './App.vue'
 import 'regenerator-runtime/runtime'
 import 'core-js';
 import 'whatwg-fetch'
-/*import 'core-js/es6/symbol';
-import 'core-js/es6/object';
-import 'core-js/es6/function';
-import 'core-js/es6/parse-int';
-import 'core-js/es6/parse-float';
-import 'core-js/es6/number';
-import 'core-js/es6/math';
-import 'core-js/es6/string';
-import 'core-js/es6/date';
-import 'core-js/es6/array';
-import 'core-js/es6/regexp';
-import 'core-js/es6/map';
-import 'core-js/es6/set';*/
 
 import PrimeVue from 'primevue/config'
 import Button from 'primevue/button'
@@ -40,17 +27,6 @@ import Sidebar from 'primevue/sidebar';
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
-/*import 'primeflex/src/_variables.scss';
-import 'primeflex/src/_grid.scss';
-import 'primeflex/src/_formlayout.scss';
-import 'primeflex/src/_display.scss';
-import 'primeflex/src/_text.scss';
-import 'primeflex/src/flexbox/_flexbox.scss';
-import 'primeflex/src/_spacing.scss';
-import 'primeflex/src/_elevation.scss';*/
-
-
-//import Dialog from 'primevue/dialog';
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(ToastService);
