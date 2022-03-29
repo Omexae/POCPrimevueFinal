@@ -15,14 +15,20 @@ npm run serve
 npm run build
 ```
 
-### Run in powershell for create a container
+### Run in powershell to create a container
 ```
 docker build -t pocprimevue .
 docker run -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 5000:5000 pocprimevue
 ```
-#### Run the build for the customer
+### Run the build for the customer
+#### On the first time 
 ```
-Just run the .bat file called "test.bat"
+Run the file called "Install.bat"
+```
+
+#### The rest of the time
+```
+Run the file called "StartUp.bat"
 ```
 
 ### Customize configuration
