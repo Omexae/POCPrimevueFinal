@@ -114,7 +114,7 @@ export default {
                     data: [50,25,12,48,56,76,42]
                 }, {
                     type: 'bar',
-                    label: 'Dataset 2',
+                    label: 'Dataset 2',                                                                                                               
                     backgroundColor: '#66BB6A',
                     data: [21,84,24,75,37,65,34],
                     borderColor: 'white',
