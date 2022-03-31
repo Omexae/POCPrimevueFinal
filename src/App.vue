@@ -1,7 +1,8 @@
 <template>
     <div>
         <ScrollPanel class="custom">
-          <Chart type="bar" :data="basicData" id="chart" :options="options" @click="addData"/>
+          <Chart type="bar" :data="basicData" id="chart" :options="options" @click="addData"/> 
+          <!-- rendre un graphique cliquable empêche l'interaction avec la légende du graphe -->
           <Chart ref="primeChart" type="pie" :data="chartData" id="chart" :options="options" />
           <Chart type="line" :data="LineData" id="chart" :options="options" />
           <Chart type="polarArea" :data="PolarData" id="chart" :options="options" />   
@@ -22,11 +23,12 @@ import testdataMGJson from "./testdataMG.json"  //
 export default {
   data(){
     return{
-      msg: "5448",
+      msg: "5448", // Variable de test pour envoyer des messages du site web vers XPA
       TestDataMG: testdataMGJson, //
-      TestData: testdataJson,     // Créér des variables JavaScript qui contiennent les données importées est nécéssaire
+      TestData: testdataJson,     // Créer des variables JavaScript qui contiennent les données importées est nécessaire
       JsonData : DataJson,        // pour pouvoir les exploiter ensuite
-      basicData: {
+      //Début définition du diagramme de barres
+      basicData: {   
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
 					{
@@ -41,6 +43,7 @@ export default {
 					}
 				]
 			},
+      // Début définition du camembert
       chartData: {
                 labels: ['A','B','C'],
                 datasets: [
@@ -51,6 +54,7 @@ export default {
                     }
                 ]
             },
+      // Début définition du diagramme de lignes
       LineData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
@@ -70,6 +74,7 @@ export default {
                     }
                 ]
             },
+      // début définition du diagramme polaire
       PolarData: {
                 datasets: [{
                     data: [11,16,7,3,14],
@@ -78,6 +83,7 @@ export default {
                 }],
                 labels: ["Blue","Green","Yellow","Cyan","Purple"]
             },
+      // début définition du diagramme en radar, ou diagramme de Kiviat
       RadarData: {
                 labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
                 datasets: [
@@ -103,6 +109,7 @@ export default {
                     }
                 ]
             },
+      // Début définition du diagramme lignes + barres
       BarData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
@@ -127,7 +134,7 @@ export default {
                 }]
             },
       options:{
-        responsive: true,
+        responsive: true, //Permet d'adapter la taille des graphiques à celle de la fenêtre, n'hésitez à la changer dans le navigateur 
         hoverMode:'index',
         maintainAspectRatio : true,
         autoPadding : false,
@@ -157,32 +164,31 @@ export default {
         CefSharp.PostMessage("Bar chart changed");
       }
       catch{
-        console.log("Won't bring up any message if you are not in Magisoft")
+        console.log("Won't bring up any message if you are not in Magisoft or XPA")
       }
     },
     tryMagisoft(){
       /*Permet d'envoyer un message vers Magisoft
-      Il y un bug logiciel : ne peux envoyer que le premier caractère du message*/
+      Il y un bug logiciel : la fonction ne peux envoyer que le premier caractère du message*/
       try{
         CefSharp.PostMessage(this.msg.toString());
           }
       catch{
-        console.log("Won't bring up any message if you are not in Magisoft")
+        console.log("Won't bring up any message if you are not in Magisoft or XPA")
           }
       
     },
     getJsonData(){
       /*Création d'un nouveau graphe en utilisant des données venant d'un fichier JSON
       Se déclenche lorsqu'on clique sur le bouton "replay" tout en bas de la page
-      Vient modifier le deuxième graphe du site, mais ne change rien en réalité car les données JSON sont les mêmes que celles déja utilisées
-      La fonction ne sert que de modèle*/
+      Vient modifier les couleurs ldu deuxième graphe du site */
       this.chartData = {
         labels: ['A','B','C'],
         datasets: [
           {
             data: this.JsonData, 
-            backgroundColor: ["#42A5F5","#66BB6A","#FFA726"],
-            hoverBackgroundColor: ["#64B5F6","#81C784","#FFB74D"]
+            backgroundColor: ["#a50fdb","#24db0f","#ecdd44"],
+            hoverBackgroundColor: ["#f578f8","#8dfc99","#f2fb9b"]
           }
         ],
       };
@@ -190,7 +196,7 @@ export default {
         CefSharp.PostMessage("Circle chart changed");
       }
       catch{
-      console.log("Won't bring up any message if you are not in Magisoft")
+      console.log("Won't bring up any message if you are not in Magisoft or XPA")
       }
    }
   },
